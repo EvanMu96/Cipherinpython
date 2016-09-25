@@ -1,18 +1,18 @@
 # Reverse cipher
-import sys
+import sys,pyperclip
 
 __author__ = "Evan Mu"
 
 
-def reverse_cipher(cipher_text):
+def reverse_cipher(plain_text):
     translated = ''
 
-    i = len(cipher_text) - 1
+    i = len(plain_text) - 1
     while i >= 0:
-        translated = translated + cipher_text[i]
+        translated = translated + plain_text[i]
         i -= 1
 
-    print(translated)
+    return translated
 
 if __name__ == '__main__':
     print("Reverse Cipher")
@@ -27,6 +27,7 @@ if __name__ == '__main__':
 
         message = cipher_file.read()
 
-    reverse_cipher(message)
-
-
+    translated = reverse_cipher(message)
+    print(translated)
+    # Copy to clipboard
+    pyperclip.copy(translated)

@@ -28,7 +28,9 @@ def caesar_cipher(text, key, mode='encrypt'):
         else:
             translated = translated + word
     print(translated)
+    # Save to clipboard
     pyperclip.copy(translated)
+    print('Cipher text has save to clipboard')
 
 if __name__ == '__main__':
     if len(sys.argv) != 4:
@@ -46,4 +48,3 @@ if __name__ == '__main__':
     file_text = f.read().upper()
 
     caesar_cipher(file_text, sys.argv[2], sys.argv[3])
-

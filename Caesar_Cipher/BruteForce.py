@@ -23,6 +23,7 @@ def brute_force(cipher_text):
 if __name__ == '__main__':
     if len(sys.argv) != 2:
         print('Usage: $python BruteForce.py [filename]')
+        exit(1)
     try:
         f = open(sys.argv[1])
     except FileNotFoundError as e:
