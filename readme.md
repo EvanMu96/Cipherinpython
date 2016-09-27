@@ -8,5 +8,9 @@
   *Hacking Secret Cipher with Python*   --AI Sweigart
 ## TODO
 More Cipher Algorithm and refactoring
+## Test
+```
+$ python ciphertest.py
+```
 ## License
  MIT
