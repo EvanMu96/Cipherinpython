@@ -24,7 +24,7 @@ def decrypt_message(key, message):
 
 def main():
     if len(sys.argv) != 3:
-        print('Usage: $python Decrypt.py [filename] [key]')
+        print('Usage: $python decrypt.py [filename] [key]')
         exit(1)
     try:
         f = open(sys.argv[1])

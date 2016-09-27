@@ -5,7 +5,7 @@ import pyperclip, sys
 def main():
 
     if len(sys.argv) != 3:
-        print('Usage: $python Transposition.py [filename] [key]')
+        print('Usage: $python transposition.py [filename] [key]')
         exit(1)
     try:
         f = open(sys.argv[1])
