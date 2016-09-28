@@ -7,7 +7,7 @@ def main():
         # set random message to test
         random.seed(42)
 
-        message = 'ABCDEFGHIJKLMNOPQRSTUVEWXYZ' * random.randint(4, 40)
+        message = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ' * random.randint(4, 40)
         # convert message to a list and shuffle it
 
         message = list(message)
