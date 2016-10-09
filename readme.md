@@ -2,6 +2,11 @@
 ## Test
 每个目录中有测试文件，支持命令行输入密文或者读取文件  
 部分程序加密结果会复制到系统clipboard
+## Ciphers
++ Caesar Cipher
++ Reverse Cipher
++ Transposition Cipher
++ Affine Cipher
 ## Inspiration
 参考书目  
   *Cryptography and Network Security*   --Atul Kahate  
