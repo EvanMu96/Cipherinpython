@@ -7,6 +7,7 @@
 + Reverse Cipher
 + Transposition Cipher
 + Affine Cipher
++ Simple Substitution Cipher 
 
 ## Inspiration
 参考书目  
