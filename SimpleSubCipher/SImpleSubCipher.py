@@ -3,11 +3,11 @@ import pyperclip
 import sys
 import random
 
-LETTERS = 'ABCDEFGGHIJKLMNOPQRSTUVWXYZ'
+LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
 def main():
-    my_message = """PLZ REPLACE YOUR PLAIN TEXT"""
-    my_key = 'HKJFUIOWHJKDJFSDBBEUIFBUSK'
+    my_message = 'If a man is offered a fact which goes against his instincts, he will scrutinize it closely, and unless the evidence is overwhelming, he will refuse to believe it. If, on the other hand, he is offered something which affords a reason for acting in accordance to his instincts, he will accept it even on the slightest evidence. The origin of myths is explained in this way. -Bertrand Russell'
+    my_key = 'LFWOAYUISVKMNXPBDCRJTQEGHZ'
     my_mode = 'encrypt'
 
     # Check my_key is valid or not
@@ -20,9 +20,10 @@ def main():
     print('Using key %s' % my_key)
     print('THe %sed message is :' % my_mode)
     print(translated)
+    pyperclip.copy(translated)
     print()
     print('This message has copied to clipboard')
-    
+
 
 def check_valid_key(key):
     key_list = list(key)
@@ -65,7 +66,9 @@ def translate_message(key, message, mode):
 
 
 def get_random_key():
-    pass
+    key = list(LETTERS)
+    random.shuffle(key)
+    return ''.join(key)
 
 if __name__ == '__main__':
     main()
