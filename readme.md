@@ -1,7 +1,7 @@
 # 用Python实现的一些简单的加密算法
 ## Test
-每个目录中有测试文件，支持命令行输入密文或者读取文件  
-部分程序加密结果会复制到系统clipboard
+每个目录中有测试文件，为方便使用使用时直接去源代码中修改相应的配置   
+加密结果会复制到系统clipboard
 ## Ciphers
 + Caesar Cipher
 + Reverse Cipher

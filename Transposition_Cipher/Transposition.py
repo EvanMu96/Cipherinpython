@@ -1,25 +1,18 @@
 # Transposition Cipher Encryption
-import pyperclip, sys
+import pyperclip
 
 
 def main():
-
-    if len(sys.argv) != 3:
-        print('Usage: $python transposition.py [filename] [key]')
-        exit(1)
-    try:
-        f = open(sys.argv[1])
-    except FileNotFoundError as e:
-        print(e)
-        exit(1)
-    plain_text = f.read()
-    key = int(sys.argv[2])
-    cipher_text = encrypt_message(key, plain_text)
+    # replace your key and plain text
+    my_message = 'Hello world'
+    my_key = 5
+    cipher_text = encrypt_message(my_key, my_message)
     print(cipher_text + '|')
 
     # Copy to clipboard
     pyperclip.copy(cipher_text)
     print('Cipher text has save to clipboard')
+
 
 def encrypt_message(key, message):
     # Each string in ciphertext represents a column in the grid

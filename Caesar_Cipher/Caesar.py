@@ -1,53 +1,48 @@
 # Caesar Cipher
 
-import pyperclip, sys
+import pyperclip
 
 __author__ = 'Evan Mu'
 
 
+def main():
+    my_message = 'helloworld'
+    #  Your Cipher key
+    my_key = 3
+    my_message = my_message.upper()
+    # mode = 'decrypt'
+    translated = caesar_cipher(my_message, my_key)
+    # Save to clipboard
+    pyperclip.copy(translated)
+    print(translated)
+    print('Cipher text has save to clipboard')
+
+
 def caesar_cipher(text, key, mode='encrypt'):
-    __letters__ = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    length = len(__letters__)
-    key = int(key)
+    LETTERS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+    length = len(LETTERS)
     translated = ''
+    key = int(key)
     for word in text:
-        if word in __letters__:
-            num = __letters__.find(word)
+        if word in LETTERS:
+            num = LETTERS.find(word)
             if mode == 'encrypt' or 'en':
                 num += key
             elif mode == 'decrypt' or 'de':
                 num -= key
             # handle the wrap-around if num is larger than the length of
-            # __letters__ or less than 0
+            # LETTERS or less than 0
 
             if num >= length:
                 num -= length
             elif num < 0:
                 num += length
-            translated += __letters__[num]
+            translated += LETTERS[num]
         else:
             translated = translated + word
-
 
     return translated
 
 
 if __name__ == '__main__':
-    if len(sys.argv) != 4:
-        print('Usage: $python Caesar.py [filename] [key] [mode,en or de]')
-        exit(1)
-    try:
-        f = open(sys.argv[1])
-    except FileNotFoundError:
-        print('File not found')
-        exit(1)
-    except IndexError:
-        print('please input your file name,the file must in the same directory')
-        exit(1)
-
-    file_text = f.read().upper()
-
-    translated = caesar_cipher(file_text, sys.argv[2], sys.argv[3])
-    # Save to clipboard
-    pyperclip.copy(translated)
-    print('Cipher text has save to clipboard')
+    main()
