@@ -45,3 +45,16 @@ def get_blk_from_text(message, blocksize=DEFAULT_BLOCK_SIZE):
             block_int += message_bytes[i] * (BYTE_SIZE ** (i % blocksize))
         block_ints.append(block_int)
     return block_ints
+
+def get_text_from_blocks(block_int, message_length, blocksize=DEFAULT_BLOCK_SIZE):
+    # Converts a list of block integers to the original message string
+    # The original message length is needed to properly convert the last block integer
+    message = []
+    for i in range(blocksize - 1, -1, -1):
+        block_message = []
+        if len(message) + i < message_length:
+            ascii_number = block_int // (BYTE_SIZE ** i)
+            block_int = block_int % (BYTE_SIZE ** i)
+            block_message.insert(0, chr(ascii_number))
+        message.extend(block_message)
+    return ''.join(block_message)
